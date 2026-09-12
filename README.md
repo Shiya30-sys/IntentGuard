@@ -104,21 +104,22 @@ LangSmith Tracing
 
 The project uses LangSmith to trace IntentGuard decisions and the full workflow.
 
-Example workflow:
-
 User Message
-     ↓
+     |
+     v
 IntentGuard
-     ↓
+     |
+     v
 Decision
-     ↓
+     |
+     v
 Tool Selection
-     ↓
+     |
+     v
 Tool / AI Agent
-     ↓
+     |
+     v
 Result
-## Limitations
-
 This is an early prototype.
 
 - The evaluation dataset is relatively small.
