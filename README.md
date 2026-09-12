@@ -5,38 +5,33 @@ IntentGuard is a prototype designed to answer a simple question:
 Does this message actually need AI computation?
 
 Instead of sending every user message directly to an AI agent, IntentGuard places a lightweight decision layer before inference.
-
 ## Architecture
 
 ```text
-USER MESSAGE
+User Message
      |
      v
-INTENTGUARD
+IntentGuard
      |
-     v
-+-------------------+
-| Does AI need to   |
-| act on this?      |
-+-------------------+
-     |
-     +-------------------+
-     |                   |
-     v                   v
-NO_ACTION              TASK
-     |                   |
-     v                   v
-   STOP              TOOL ROUTER
-                         |
-          +--------------+--------------+
-          |              |              |
-          v              v              v
-      WEB SEARCH      WEATHER         PDF Q&A
-          |              |              |
-          +--------------+--------------+
-                         |
-                         v
-                     AI AGENT
+     +------------------+
+     |                  |
+     v                  v
+ NO_ACTION            TASK
+     |                  |
+     v                  v
+   STOP             Tool Router
+                        |
+             +----------+----------+
+             |          |          |
+             v          v          v
+          Web Search  Weather    PDF Q&A
+             |          |          |
+             +----------+----------+
+                        |
+                        v
+                     AI Agent
+
+
 Why IntentGuard?
 
 AI-agent systems can consume compute, tokens, API calls, latency, and money when they perform unnecessary inference or tool calls.
