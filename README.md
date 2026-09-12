@@ -10,28 +10,34 @@ Instead of sending every user message directly to an AI agent, IntentGuard place
 
 ## Architecture
 
-    User Message
-         |
-         v
-    IntentGuard
-         |
-      +--+--+
-      |     |
-      v     v
-    NO_ACTION  TASK
-      |         |
-      v         v
-     STOP    Tool Router
-                |
-        +-------+-------+-------+
-        |               |       |
-        v               v       v
-    Web Search       Weather   PDF Q&A
-        |               |       |
-        +-------+-------+-------+
-                |
-                v
-             AI Agent
+```text
+                    USER MESSAGE
+                         |
+                         v
+                 +---------------+
+                 |  INTENT GUARD |
+                 +-------+-------+
+                         |
+                +--------+--------+
+                |                 |
+                v                 v
+           NO_ACTION            TASK
+                |                 |
+                v                 v
+              STOP          TOOL ROUTER
+                                  |
+                     +------------+------------+
+                     |            |            |
+                     v            v            v
+                 WEB SEARCH    WEATHER      PDF Q&A
+                     |            |            |
+                     +------------+------------+
+                                  |
+                                  v
+                              AI AGENT
+                                  |
+                                  v
+                               RESPONSE
 
 ## Why IntentGuard?
 
