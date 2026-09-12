@@ -45,25 +45,38 @@ If the message is a genuine task, IntentGuard allows it to continue to the AI sy
 
 ## Architecture
 
-    USER MESSAGE
-         |
-         v
-    INTENT GUARD
-         |
-     +---+---+
-     |       |
-     v       v
- NO_ACTION  TASK
-     |       |
-     v       v
-   STOP    AI AGENT
-              |
-              v
-         TOOL / LLM
-              |
-              v
-          RESPONSE
+**1. User Message**
 
+↓  
+
+**2. IntentGuard**
+
+↓  
+
+**3. Decision**
+
+→ **NO_ACTION** → Stop. AI agent is not called.
+
+→ **TASK** → Continue to AI Agent.
+
+↓  
+
+**4. AI Agent**
+
+↓  
+
+**5. Tool / LLM**
+
+↓  
+
+**6. Response**
+
+The key principle is:
+
+> Make the cheapest reasonable decision first, and perform more expensive AI computation only when it is needed.
+The key principle is:
+
+Make the cheapest reasonable decision first, and perform more expensive AI computation only when it is needed.
 The key principle is:
 
 > **Make the cheapest reasonable decision first, and perform more expensive AI computation only when it is needed.**
