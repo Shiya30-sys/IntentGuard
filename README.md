@@ -57,7 +57,7 @@ INTENT GUARD
                  TOOL / LLM
                       |
                       v
-                  RESPONSE
+                  RESPONSE'''
 # IntentGuard
 
 ## A Lightweight, Context-Aware Pre-Inference Gate for AI Agents
