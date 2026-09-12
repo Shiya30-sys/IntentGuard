@@ -130,3 +130,10 @@ This is an early prototype.
 - Evaluate across different LLMs and agent frameworks.
 ## Project Goal
 The long-term goal is to explore whether a lightweight pre-inference gate can make AI-agent systems more efficient without silently dropping genuine user tasks.
+
+## References
+* International Energy Agency — Key Questions on Energy and AI
+* Microsoft Research — Energy use of AI inference, efficiency pathways, and test-time scaling
+* Gartner — AI Inference Costs Per Agentic Workflow
+* Nature Energy — Energy use of AI responses.
+* Brave Research — AgentStop: Terminating Local AI Agents Early to Save Energy.
